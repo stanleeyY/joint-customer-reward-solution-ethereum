@@ -1,0 +1,14 @@
+<nav class="w3-bar w3-border w3-light-grey" role="navigation">
+    <div class="w3-bar-item w3-text-grey">Union Money</div>
+    <a class="w3-bar-item w3-button" href="/partner">Home</a>
+
+    <a class="w3-bar-item w3-button" href="/transaction">Customer Transaction</a>
+    <a class="w3-bar-item w3-button" href="/partners-record">Partners Record</a>
+    <a class="w3-bar-item w3-button" href="/api-info">API Info</a>
+
+    <% if (locals.user){ %>
+        <a class="w3-bar-item w3-button" id="qsLogoutBtn" href="/logout">Log Out</a>
+    <% }else{ %>
+        <a class="w3-bar-item w3-button" id="qsLogoutBtn" href="/login">Log In</a>
+    <% } %>
+</nav>

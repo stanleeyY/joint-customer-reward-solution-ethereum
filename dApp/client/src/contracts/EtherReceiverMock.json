@@ -1,0 +1,639 @@
+{
+  "contractName": "EtherReceiverMock",
+  "abi": [
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "acceptEther",
+          "type": "bool"
+        }
+      ],
+      "name": "setAcceptEther",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.11+commit.5ef660b1\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"acceptEther\",\"type\":\"bool\"}],\"name\":\"setAcceptEther\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/s09wsa5a/WebstormProjects/Reward/contracts/contracts/mocks/EtherReceiverMock.sol\":\"EtherReceiverMock\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/s09wsa5a/WebstormProjects/Reward/contracts/contracts/mocks/EtherReceiverMock.sol\":{\"keccak256\":\"0xb0ddab346fa2f320b0e35cfa2bf3fa8b87963bbb515645f74c467e56d89611df\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7ab8ec68730c5d72ab21aca4d2a5b270905c7b9ceceaf4e2b2c7442f43bf3430\",\"dweb:/ipfs/QmUMf3baU3W45owFwP3W7o7e4zZ7Xi5Qjt6wmzp2n9TaR8\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060cc8061001f6000396000f3fe608060405260043610601f5760003560e01c80634fea120c14604157603c565b36603c576000809054906101000a900460ff16603a57600080fd5b005b600080fd5b348015604c57600080fd5b50607860048036036020811015606157600080fd5b81019080803515159060200190929190505050607a565b005b806000806101000a81548160ff0219169083151502179055505056fea2646970667358221220c47e9e29b178e2b0c58338d8ff445bbe94566e20332717b4896766db438219fc64736f6c634300060b0033",
+  "deployedBytecode": "0x608060405260043610601f5760003560e01c80634fea120c14604157603c565b36603c576000809054906101000a900460ff16603a57600080fd5b005b600080fd5b348015604c57600080fd5b50607860048036036020811015606157600080fd5b81019080803515159060200190929190505050607a565b005b806000806101000a81548160ff0219169083151502179055505056fea2646970667358221220c47e9e29b178e2b0c58338d8ff445bbe94566e20332717b4896766db438219fc64736f6c634300060b0033",
+  "immutableReferences": {},
+  "sourceMap": "58:261:56:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "58:261:56:-:0;;;;;;;;;;;;;;;;;;;;;;;264:12;;;;;;;;;;;259:52;;292:8;;;259:52;58:261;;;;;123:92;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;197:11;182:12;;:26;;;;;;;;;;;;;;;;;;123:92;:::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.6.0;\n\ncontract EtherReceiverMock {\n    bool private _acceptEther;\n\n    function setAcceptEther(bool acceptEther) public {\n        _acceptEther = acceptEther;\n    }\n\n    receive () external payable {\n        if (!_acceptEther) {\n            revert();\n        }\n    }\n}\n",
+  "sourcePath": "/Users/s09wsa5a/WebstormProjects/Reward/contracts/contracts/mocks/EtherReceiverMock.sol",
+  "ast": {
+    "absolutePath": "/Users/s09wsa5a/WebstormProjects/Reward/contracts/contracts/mocks/EtherReceiverMock.sol",
+    "exportedSymbols": {
+      "EtherReceiverMock": [
+        5626
+      ]
+    },
+    "id": 5627,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5602,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:56"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5626,
+        "linearizedBaseContracts": [
+          5626
+        ],
+        "name": "EtherReceiverMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5604,
+            "mutability": "mutable",
+            "name": "_acceptEther",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5626,
+            "src": "91:25:56",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 5603,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "91:4:56",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 5613,
+              "nodeType": "Block",
+              "src": "172:43:56",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5611,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5609,
+                      "name": "_acceptEther",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5604,
+                      "src": "182:12:56",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5610,
+                      "name": "acceptEther",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5606,
+                      "src": "197:11:56",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "182:26:56",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 5612,
+                  "nodeType": "ExpressionStatement",
+                  "src": "182:26:56"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "4fea120c",
+            "id": 5614,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAcceptEther",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5607,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5606,
+                  "mutability": "mutable",
+                  "name": "acceptEther",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5614,
+                  "src": "147:16:56",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5605,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:4:56",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:18:56"
+            },
+            "returnParameters": {
+              "id": 5608,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "172:0:56"
+            },
+            "scope": 5626,
+            "src": "123:92:56",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5624,
+              "nodeType": "Block",
+              "src": "249:68:56",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 5618,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "263:13:56",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 5617,
+                      "name": "_acceptEther",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5604,
+                      "src": "264:12:56",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5623,
+                  "nodeType": "IfStatement",
+                  "src": "259:52:56",
+                  "trueBody": {
+                    "id": 5622,
+                    "nodeType": "Block",
+                    "src": "278:33:56",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 5619,
+                            "name": "revert",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [
+                              -19,
+                              -19
+                            ],
+                            "referencedDeclaration": -19,
+                            "src": "292:6:56",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_revert_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 5620,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "292:8:56",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 5621,
+                        "nodeType": "ExpressionStatement",
+                        "src": "292:8:56"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5625,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5615,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "229:2:56"
+            },
+            "returnParameters": {
+              "id": 5616,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "249:0:56"
+            },
+            "scope": 5626,
+            "src": "221:96:56",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5627,
+        "src": "58:261:56"
+      }
+    ],
+    "src": "33:287:56"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/s09wsa5a/WebstormProjects/Reward/contracts/contracts/mocks/EtherReceiverMock.sol",
+    "exportedSymbols": {
+      "EtherReceiverMock": [
+        5626
+      ]
+    },
+    "id": 5627,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5602,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:56"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5626,
+        "linearizedBaseContracts": [
+          5626
+        ],
+        "name": "EtherReceiverMock",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5604,
+            "mutability": "mutable",
+            "name": "_acceptEther",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 5626,
+            "src": "91:25:56",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 5603,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "91:4:56",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 5613,
+              "nodeType": "Block",
+              "src": "172:43:56",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5611,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5609,
+                      "name": "_acceptEther",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5604,
+                      "src": "182:12:56",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5610,
+                      "name": "acceptEther",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5606,
+                      "src": "197:11:56",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "src": "182:26:56",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 5612,
+                  "nodeType": "ExpressionStatement",
+                  "src": "182:26:56"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "4fea120c",
+            "id": 5614,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAcceptEther",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5607,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5606,
+                  "mutability": "mutable",
+                  "name": "acceptEther",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 5614,
+                  "src": "147:16:56",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 5605,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "147:4:56",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "146:18:56"
+            },
+            "returnParameters": {
+              "id": 5608,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "172:0:56"
+            },
+            "scope": 5626,
+            "src": "123:92:56",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5624,
+              "nodeType": "Block",
+              "src": "249:68:56",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 5618,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "!",
+                    "prefix": true,
+                    "src": "263:13:56",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 5617,
+                      "name": "_acceptEther",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5604,
+                      "src": "264:12:56",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 5623,
+                  "nodeType": "IfStatement",
+                  "src": "259:52:56",
+                  "trueBody": {
+                    "id": 5622,
+                    "nodeType": "Block",
+                    "src": "278:33:56",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "id": 5619,
+                            "name": "revert",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [
+                              -19,
+                              -19
+                            ],
+                            "referencedDeclaration": -19,
+                            "src": "292:6:56",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_revert_pure$__$returns$__$",
+                              "typeString": "function () pure"
+                            }
+                          },
+                          "id": 5620,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "292:8:56",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 5621,
+                        "nodeType": "ExpressionStatement",
+                        "src": "292:8:56"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5625,
+            "implemented": true,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 5615,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "229:2:56"
+            },
+            "returnParameters": {
+              "id": 5616,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "249:0:56"
+            },
+            "scope": 5626,
+            "src": "221:96:56",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5627,
+        "src": "58:261:56"
+      }
+    ],
+    "src": "33:287:56"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.11+commit.5ef660b1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2",
+  "updatedAt": "2020-07-16T11:12:21.729Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

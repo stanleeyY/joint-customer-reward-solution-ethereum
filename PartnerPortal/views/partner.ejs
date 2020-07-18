@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable();
+        });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+            src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="//cdn2.auth0.com/styleguide/latest/lib/logos/img/favicon.png">
+</head>
+<body>
+<%- include('nav'); -%>
+<div class="w3-card-4">
+
+
+    <h2>Partner profile</h2>
+    <p>Name: <%= name %></p>
+    <p>Token Balance: <%= balance %></p>
+    <h3>Tokens Deposit Record:</h3>
+    <table id="table_id" class="display">
+        <thead>
+        <tr>
+            <th>Time</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for (let i = 0; i < trans.length; i++) { %>
+            <tr>
+                <td><%= trans[i].time %></td>
+                <td><%= trans[i].amount %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="//cdn2.auth0.com/styleguide/latest/lib/logos/img/favicon.png">
+</head>
+<body>
+
+<%- include('nav'); -%>
+
+<div class="w3-card-4">
+    <div class="w3-container w3-green">
+        <h2>Sign up</h2>
+    </div>
+    <form action="/submit-partner-form" method="post" id="form" class="w3-container">
+
+        <label for="name">Business Name:</label>
+        <input class="w3-input" id="name" type="text" name="name">
+        <br/>
+        <label for="phone">Phone Number: </label>
+        <input class="w3-input" id="phone" type="tel" name="phone">
+        <br/>
+
+        <label for="nature">Business nature: (E.g. Games, App, Online store, Retail)</label>
+        <input class="w3-input" id="nature" type="text" name="nature">
+        <br/>
+
+        <label for="business">Please describe your business:</label>
+        <input class="w3-input" id="business" name="business">
+        <br/>
+
+        <input type="submit" class="w3-btn w3-light-green">
+    </form>
+
+</div>
+
+</body>
+</html>

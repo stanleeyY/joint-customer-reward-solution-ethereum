@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="//cdn2.auth0.com/styleguide/latest/lib/logos/img/favicon.png">
+</head>
+<body>
+<%- include('nav'); -%>
+
+<div class="w3-card-4"><h1>Welcome <%= user.nickname %>></h1><img
+            src= <%= user.picture %>>
+    <h2>User profile</h2>
+    <p>This is the content of <code>req.user</code>.</p>
+    <p>Note: <code>_raw</code> and <code>_json</code> properties have been ommited.</p>
+    <pre><code><%= userProfile %></code></pre>
+    <p>Balance: <%= balance %></p>
+</div>
+</body>
+</html>
